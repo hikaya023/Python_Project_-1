@@ -1,0 +1,49 @@
+{% extends 'base.html' %}
+
+    {%block link%}
+        <link rel="stylesheet" href="{{ url_for('static',filename='css/style2.css') }}">
+    {%endblock%}
+
+    {%block boots%}
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
+    	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
+	{%endblock%}
+
+    {%block title%}
+        <title>Destruction-Contact</title>
+    {%endblock%}
+
+
+    {%block body%}
+        <div class = "login_page">
+                <div class="container-form-donate">
+            <div class="create_acc">
+              <h2>Be in our ranks!</h2>
+            </div>
+
+            <form method="POST" id="form" class="form">
+            <div class="form-control">
+                <label for="email">Email</label>
+                <input type="email" placeholder="example_23" id="email" name="email"/>
+                <i class="fas fa-check-circle"></i>
+                <i class="fas fa-exclamation-circle"></i>
+                <small>Error message</small>
+            </div>
+            <div class="form-control">
+                <label for="password">Password</label>
+                <input type="password" placeholder="Password" id="password" name="password"/>
+                <i class="fas fa-check-circle"></i>
+                <i class="fas fa-exclamation-circle"></i>
+            </div>
+            <button type="submit" class="btn btn-primary">
+			    Login
+		    </button>
+
+        </form>
+          </div>
+              </div>
+
+    {%endblock%}
+
+
+

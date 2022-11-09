@@ -1,0 +1,35 @@
+{% extends 'base.html' %}
+
+    {%block link%}
+        <link rel="stylesheet" href="{{ url_for('static',filename='css/style2.css') }}">
+    {%endblock%}
+
+    {%block boots%}
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
+    	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
+	{%endblock%}
+
+    {%block title%}
+        <title>Destruction-CV</title>
+    {%endblock%}
+
+    {%block body%}
+        <div class="container-about">
+            <section class="inner-page">
+            <div class="panel">
+            <div class="container">
+                <h2 style="text-align: center; font-size: 35px; font-family: 'Press Start 2P'; padding-top: 15px;">You can try <br>our beta-product</h2>
+            <p style="text-align: center; color: #4C51B4; font-size: 20px; font-family: 'Press Start 2P'; padding-top: 3px;"> Minecraft: Java & AITU Edition:
+            <p style="text-align: center; color: #09AC89; font-size: 20px; font-family: 'Press Start 2P';"> Create, close, survive - and so on in a circle with AITU!
+            <p style="text-align: center; color: black; font-size: 20px; font-family: 'Press Start 2P'; "> $1.99
+                <br>
+            <a href="/buy" type="submit" class="btn btn-lg btn-block btn-outline-primary">
+				BUY
+            </a>
+            </p>
+      </div>
+                </div>
+    </section>
+
+        </div>
+    {% endblock %}

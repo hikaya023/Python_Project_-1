@@ -1,0 +1,16 @@
+{% extends 'base.html' %}
+
+    {%block link%}
+        <link rel="stylesheet" href="{{ url_for('static',filename='css/style2.css') }}">
+    {%endblock%}
+
+    {%block title%}
+        <title>Destruction-Files</title>
+    {%endblock%}
+
+
+{%block body%}
+     <div class="download_page" align="center">
+      <a href="/return-files/{{value}}" target="blank"><button class='btn btn-default'>Download</button></a>
+     </div>
+{%endblock%}

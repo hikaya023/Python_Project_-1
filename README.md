@@ -1,2 +1,2 @@
-# Python_Project_-1
-Project topic - ???
+# maincraft_server_validation
+Project topic - Destruction(KazCraft)

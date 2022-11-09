@@ -1,0 +1,291 @@
+@import url('https://fonts.googleapis.com/css2?family=Righteous&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
+
+
+
+body {
+  margin: 0;
+  font-family: 'Righteous', cursive;
+  line-height: 1.6;
+  font-size: 18px;
+  color: #777;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  margin: 0 auto;
+}
+
+/*    HEADER  */
+#header {
+  font-family: 'Righteous', cursive;
+  color: #fff;
+
+  position: fixed;
+  padding-top: 2px;
+  width: 100%;
+  top: 0;
+  left: 0;
+  right: 0;
+}
+
+.container {
+width: 100%;
+max-width: 1400px;
+margin: 0 auto;
+font-family: 'Righteous', cursive;
+}
+
+.intro__title {
+  font-size: 100px;
+  font-weight: 500px;
+
+  color:#faf0be;
+  text-align: center;
+  padding-top: 200px;
+}
+
+.header {
+position: fixed;
+padding-top: 2px;
+width: 100%;
+top: 0;
+left: 0;
+right: 0;
+}
+
+.header__inner {
+padding-right: 1500;
+display: flex;
+align-items: center;
+justify-content: space-between;
+}
+
+.header__logo {
+width: 10%;
+
+padding-left: 70px;
+padding-top: 10px;
+
+}
+
+.nav  {
+font-size: 30 px;
+text-transform: uppercase;
+
+}
+
+.nav__link {
+  color: white;
+  display: inline-block;
+  vertical-align: top;
+  text-decoration: none;
+  margin: 0 12px;
+
+  position: relative;
+  transition: color 0.1s linear;
+}
+
+.navbar-brand{
+    text-decoration: none;
+    padding-left: 105px;
+    display: flex;
+    align-items: center;
+}
+
+.navbar-nav{
+  color: #fff;
+  font-size: 18px;
+  text-transform: uppercase;
+}
+
+
+
+.nav__link:after {
+  content: "";
+  display: block;
+  width: 100%;
+  height: 2px;
+  opacity: 0;
+  background-color: #e03c31;
+
+  position: absolute;
+  top: 100%;
+  left 0;
+  z-index: 1;
+  transition: opacity 0.1s linear;
+}
+
+.nav__link:hover {
+color: #e03c31;
+}
+
+.nav__link:hover:after {
+opacity: 1;
+}
+
+/*    INTRODUCTION  */
+.container-intro {
+  width: 100%;
+  max-width: 1500px;
+  margin: 0 auto;
+}
+
+.intro {
+  width:100%;
+  height: 100vh;
+  background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("https://wallpapercave.com/wp/wp4535209.png") no-repeat;
+  background-size: cover;
+}
+
+.intro-text {
+  font-size: 110px;
+  font-weight: 500px;
+  font-family: 'Press Start 2P', cursive;
+  color:#BF9EBE;
+  text-align: center;
+
+  padding-top: 250px;
+  margin: 0 auto;
+
+}
+
+/*    FEATURES    */
+.sec_page {
+  width:100%;
+  height: 100vh;
+  background-image: linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.8)), url("https://phonoteka.org/uploads/posts/2021-07/1625366249_19-phonoteka-org-p-neonovie-oboi-mainkraft-oboi-krasivo-20.jpg");
+  background-size: cover;
+}
+
+.sec_page_text {
+  font-size: 20px;
+  padding-top: 250px;
+  color: white;
+}
+
+.h4 {
+  color:#fc89ac;
+  padding-top: 25px;
+}
+
+.parallax {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    background-image: url(Img/medical-prof.jpg);
+    min-height: 400px;
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    margin-bottom: 45px;
+    box-shadow: 0 5px 25px rgb(0 0 0 / 15%);
+}
+
+
+.carousel-item {
+    height: 250px;
+}
+
+.carousel-inner .carousel-item.active,
+.carousel-inner .carousel-item-next,
+.carousel-inner .carousel-item-prev {
+    display: flex;
+}
+
+.title {
+    color: white;
+    font-size: 36px;
+    font-family: 'Open Sans', sans-serif;
+    font-weight: 700;
+    line-height: 1.1;
+    margin: 0 0 30px;
+    text-align: center;
+    text-shadow: 1px 1px 1px black;
+    animation: slideUp 1s forwards;
+}
+
+.button {
+    vertical-align: top;
+    text-decoration: none;
+    font-family: 'Raleway', sans-serif;
+    color: white;
+    font-weight: 600;
+    text-transform: uppercase;
+    padding: 14px 10px;
+    border-radius: 3px;
+    background-color: #e03c31;
+}
+
+.button:hover {
+  color:black;
+}
+
+.mean, .mean-1 {
+  font-family: 'Righteous', cursive;
+  color: white;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.container-info {
+  width: 100%;
+  max-width: 1500px;
+  margin: 0 auto;
+  background-color:black;
+}
+
+.footer {
+  text-align: center;
+  text-decoration: none;
+  padding-top: 18px;
+}
+
+.footer-text {
+  text-align: center;
+  text-decoration: none;
+  color: #e03c31;
+}
+
+@media(max-width: 1230px) {
+    .header{padding: 0 125px 0 125px;}
+    .container{padding: 0 125px 0 125px;}
+    .header__inner{padding: 0 125px 0 125px;}
+    .header__logo{padding: 0 125px 0 125px;}
+    .nav{max-height: 990px;}
+
+
+}
+
+@media(max-width: 990px) {
+    .header{padding: 0 100px 0 100px;}
+    .container{padding: 0 100px 0 100px;}
+    .header__inner{padding: 0 100px 0 100px;}
+    .header__logo{padding: 0 100px 0 100px;}
+    .donate_page{height: 55px;}
+
+
+}
+@media(max-width: 770px) {
+    .header{padding: 0 75px 0 75px;}
+    .container{padding: 0 75px 0 75px;}
+    .header__inner{padding: 0 75px 0 75px;}
+    .header__logo{padding: 0 75px 0 75px;}
+    .intro{max-height: 500px;}
+
+
+
+}
+@media (max-width: 575px) {
+    .header__logo{height: 0px;}
+}
+@media (max-width: 500px) {
+    .header{padding: 0 50px 0 50px;}
+    .container{padding: 0 50px 0 50px;}
+    .header__inner{padding: 0 50px 0 50px;}
+    .header__logo{padding: 0 100px 0 100px;}
+
+    .nav{font-size: 15px;}
+
+    }
+}

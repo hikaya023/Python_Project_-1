@@ -1,12 +1,14 @@
-from flask import Blueprint, Flask, render_template, request, flash, redirect, url_for, jsonify
-from flask_login import login_user, login_required, logout_user, current_user
-from werkzeug.utils import secure_filename
+from flask import Blueprint, url_for, jsonify
+from flask_login import login_user, login_required, current_user
+
 from destapp.models import Note, Item
-from destapp import db
+from . import db
 from flask import flash,request,redirect,send_file,render_template
 from io import BytesIO
 import json
-from cloudipsp import Api, Checkout
+
+import stripe
+
 
 ALLOWED_EXTENSION = {'txt', 'pdf', 'jpg', 'jpeg', 'png','gif', 'jfif', 'docx', 'pptx'}
 views = Blueprint('views', __name__, template_folder='templates')
@@ -34,10 +36,6 @@ def about():
 def contact():
     return render_template('contacts.html', user=current_user)
 
-# @views.route('/upload')
-# @login_required
-# def upload():
-#     return render_template('upload.html', user=current_user)
 
 @views.route("/upload", methods=["GET", "POST"])
 def upload():
@@ -140,16 +138,32 @@ def delete_item():
             db.session.commit()
     return jsonify({})
 
+YOUR_DOMAIN = "http://127.0.0.1:3333"
+stripe.api_key = "sk_test_51M2KJBG4gjimdsyeqnlTloqXaHMDgmc6dYWkF4N005kKw5gFql4ygn3mJd2MhJCY2IvTIvHs1GcWtfXSukM1fNyO00TxVT8luW "
 @views.route('/buy', methods=['GET'])
 @login_required
 def buy():
-    api = Api(merchant_id=1512905,
-              secret_key='aeJDmyRtrZkKqZLQ1tDhUKDiTD6HdmRC')
-    checkout = Checkout(api=api)
-    data = {
-        "currency": "USD",
-        "amount": 1.99
-    }
-    url = checkout.url(data).get('checkout_url')
+    try:
+        checkout_session = stripe.checkout.Session.create(
+            line_items = [
+                {
+                    'price':'price_1M2KtFG4gjimdsyeGlhmwusp',
+                    'quantity': 1
+                }
+            ],
+            mode="subscription",
+            success_url=YOUR_DOMAIN + "/success",
+            cancel_url = YOUR_DOMAIN + "/cancel"
+        )
+    except Exception as e:
+        return str(e)
 
-    return redirect(url)
+    return redirect(checkout_session.url, code=303)
+
+@views.route('/success')
+@login_required
+def success():
+    item = 'static/images/meme.jpg'
+    return send_file(item, mimetype='image.png', as_attachment=True, download_name=item)
+
+

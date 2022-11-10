@@ -21,13 +21,13 @@ def create_app():
     def load_user(id):
         return User.query.get(int(id))
 
-    from website.views import views
-    from website.auth import auth
+    from destapp.views import views
+    from destapp.auth import auth
 
     app.register_blueprint(views, url_prefix='/')
     app.register_blueprint(auth, url_prefix='/')
 
-    from .models import User, Note
+    from destapp.models import User, Note
 
     with app.app_context():
         db.create_all()

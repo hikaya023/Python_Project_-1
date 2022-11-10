@@ -1,8 +1,8 @@
 from flask import Blueprint, Flask, render_template, request, flash, redirect, url_for, jsonify
 from flask_login import login_user, login_required, logout_user, current_user
 from werkzeug.utils import secure_filename
-from website.models import Note, Item
-from . import db
+from destapp.models import Note, Item
+from destapp import db
 from flask import flash,request,redirect,send_file,render_template
 from io import BytesIO
 import json

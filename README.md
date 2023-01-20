@@ -1,2 +1,2 @@
-# maincraft_server_validation
+# minecraft_server_validation
 
